@@ -11,6 +11,13 @@ Make security properties actionable by requiring **explicit, verifiable security
 Architecture documents often describe components, roles, and data flows — but leave unclear **which concrete security properties each component must fulfil**.  
 This blocks implementers, evaluators, and auditors from producing consistent evidence.
 
+## Control Type
+Select per requirement:
+- **Preventive Controls** = prevents the incident (e.g., nonce check blocks replay)
+- **Detective Controls** = Recognizes that something has happened/been attempted, e.g., replay attempts are increasing (Logs / Monitoring / Alerts)
+- **Corrective Controls** = Responds/resolves (e.g., invalidates session, rotates key)
+- **Compensating Controls** = Alternative measure if primary control is not possible
+
 ## Normative Statement
 For each identified **component** (and each relevant **trust boundary**), the system documentation **MUST** define:
 1) explicit security requirements (as clear statements),  
@@ -37,6 +44,8 @@ For each component, provide a short “Component Security Sheet”:
 - Requirements (MUST/MUST NOT statements)
 - Acceptance criteria (GWT)
 - Evidence approach (how to validate)
+- Linked risk(s) / threat assumptions
+- Residual risk / out-of-scope note
 
 ## Notes
 - Requirements should be **atomic** (one requirement → one observable outcome).
